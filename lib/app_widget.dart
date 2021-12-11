@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ta_tudo_caro_app/modules/splash/splash_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       initialRoute: "/splash",
       routes: {
-        "/splash": (context) => Container(),
+        "/splash": (context) => const SpalshPage(),
         "/login": (context) => Container(),
       },
     );
