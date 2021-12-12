@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ta_tudo_caro_app/shared/theme/app_text.dart';
 import 'package:ta_tudo_caro_app/shared/theme/app_theme.dart';
+import 'package:ta_tudo_caro_app/shared/widgets/input_text/input_text.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -19,42 +19,14 @@ class LoginPage extends StatelessWidget {
               "assets/images/logo.png",
               width: 200,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Email").label,
-                SizedBox(height: 13),
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Digite seu email",
-                    hintStyle: AppTheme.textStyles.hint,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: AppTheme.colors.border),
-                    ),
-                  ),
-                  keyboardType: TextInputType.emailAddress,
-                ),
-              ],
+            InputTexts(
+              label: "Email",
+              hint: "Digite seu email",
             ),
             SizedBox(height: 30),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Senha").label,
-                SizedBox(height: 13),
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Digite sua senha",
-                    hintStyle: AppTheme.textStyles.hint,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: AppTheme.colors.border),
-                    ),
-                  ),
-                  keyboardType: TextInputType.emailAddress,
-                ),
-              ],
+            InputTexts(
+              label: "Senha",
+              hint: "Digite sua senha",
             ),
           ],
         ),

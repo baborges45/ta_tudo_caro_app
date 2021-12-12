@@ -1,6 +1,8 @@
 import 'app_colors.dart';
 import 'text_styles.dart';
 
+//export 'app_text.dart';
+
 class AppTheme {
   static final AppTheme instance = AppTheme();
 
