@@ -51,6 +51,7 @@ class CreateAccountPage extends StatelessWidget {
             InputTexts(
               label: "Senha",
               hint: "Digite sua senha",
+              obscure: true,
             ),
             SizedBox(height: 50),
             Button(

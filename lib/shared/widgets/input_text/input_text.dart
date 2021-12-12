@@ -5,10 +5,12 @@ import 'package:ta_tudo_caro_app/shared/theme/app_theme.dart';
 class InputTexts extends StatelessWidget {
   final String label;
   final String hint;
+  final bool obscure;
   const InputTexts({
     Key? key,
     required this.label,
     required this.hint,
+    this.obscure = false,
   }) : super(key: key);
 
   @override
@@ -19,6 +21,7 @@ class InputTexts extends StatelessWidget {
         Text(label).label,
         SizedBox(height: 13),
         TextFormField(
+          obscureText: obscure,
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: AppTheme.textStyles.hint,
