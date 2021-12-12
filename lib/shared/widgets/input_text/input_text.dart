@@ -27,7 +27,6 @@ class InputTexts extends StatelessWidget {
               borderSide: BorderSide(color: AppTheme.colors.border),
             ),
           ),
-          keyboardType: TextInputType.emailAddress,
         ),
       ],
     );
