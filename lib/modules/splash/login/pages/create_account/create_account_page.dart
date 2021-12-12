@@ -3,8 +3,8 @@ import 'package:ta_tudo_caro_app/shared/theme/app_theme.dart';
 import 'package:ta_tudo_caro_app/shared/widgets/button/button.dart';
 import 'package:ta_tudo_caro_app/shared/widgets/input_text/input_text.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class CreateAccountPage extends StatelessWidget {
+  const CreateAccountPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +15,11 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              "assets/images/logo.png",
-              width: 200,
+            InputTexts(
+              label: "Nome",
+              hint: "Digite seu nome",
             ),
+            SizedBox(height: 30),
             InputTexts(
               label: "Email",
               hint: "Digite seu email",
@@ -30,12 +31,7 @@ class LoginPage extends StatelessWidget {
             ),
             SizedBox(height: 50),
             Button(
-              label: 'Entrar',
-            ),
-            SizedBox(height: 30),
-            Button(
               label: 'Criar Conta',
-              type: ButtonType.outline,
             ),
           ],
         ),
