@@ -11,7 +11,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Tá Caro',
       theme: ThemeData(primarySwatch: Colors.green),
-      initialRoute: "/create-account",
+      initialRoute: "/splash",
       routes: {
         "/splash": (context) => const SpalshPage(),
         "/login": (context) => LoginPage(),

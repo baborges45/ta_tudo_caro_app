@@ -31,11 +31,17 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 50),
             Button(
               label: 'Entrar',
+              onTap: () {
+                print("Entrar");
+              },
             ),
             SizedBox(height: 30),
             Button(
               label: 'Criar Conta',
               type: ButtonType.outline,
+              onTap: () {
+                Navigator.pushNamed(context, "/create-account");
+              },
             ),
           ],
         ),
