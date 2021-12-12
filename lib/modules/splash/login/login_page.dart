@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ta_tudo_caro_app/shared/theme/app_theme.dart';
 import 'package:ta_tudo_caro_app/shared/widgets/button/button.dart';
 import 'package:ta_tudo_caro_app/shared/widgets/input_text/input_text.dart';
+import 'package:validators/validators.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -23,6 +24,8 @@ class LoginPage extends StatelessWidget {
               label: "Email",
               hint: "Digite seu email",
               onChanged: print,
+              validator: (value) =>
+                  isEmail(value) ? null : "Digite um email válido!",
             ),
             SizedBox(height: 30),
             InputTexts(
@@ -30,6 +33,8 @@ class LoginPage extends StatelessWidget {
               hint: "Digite sua senha",
               obscure: true,
               onChanged: print,
+              validator: (value) =>
+                  value.length >= 6 ? null : "Digite um email válido!",
             ),
             SizedBox(height: 50),
             Button(

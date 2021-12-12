@@ -7,7 +7,7 @@ class InputTexts extends StatelessWidget {
   final String hint;
   final bool obscure;
   final void Function(String)? onChanged;
-  final String? Function(String?)? validator;
+  final String? Function(String)? validator;
   const InputTexts({
     Key? key,
     required this.label,
@@ -27,7 +27,11 @@ class InputTexts extends StatelessWidget {
         TextFormField(
           obscureText: obscure,
           onChanged: onChanged,
-          validator: validator,
+          validator: (value) {
+            if (validator != null) {
+              return validator!(value ?? "");
+            }
+          },
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: AppTheme.textStyles.hint,
