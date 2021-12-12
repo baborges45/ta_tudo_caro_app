@@ -6,11 +6,15 @@ class InputTexts extends StatelessWidget {
   final String label;
   final String hint;
   final bool obscure;
+  final void Function(String)? onChanged;
+  final String? Function(String?)? validator;
   const InputTexts({
     Key? key,
     required this.label,
     required this.hint,
     this.obscure = false,
+    this.onChanged,
+    this.validator,
   }) : super(key: key);
 
   @override
@@ -22,6 +26,8 @@ class InputTexts extends StatelessWidget {
         SizedBox(height: 13),
         TextFormField(
           obscureText: obscure,
+          onChanged: onChanged,
+          validator: validator,
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: AppTheme.textStyles.hint,

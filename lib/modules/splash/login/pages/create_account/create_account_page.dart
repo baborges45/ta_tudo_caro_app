@@ -41,17 +41,20 @@ class CreateAccountPage extends StatelessWidget {
             InputTexts(
               label: "Nome",
               hint: "Digite seu nome",
+              onChanged: print,
             ),
             SizedBox(height: 30),
             InputTexts(
               label: "Email",
               hint: "Digite seu email",
+              onChanged: print,
             ),
             SizedBox(height: 30),
             InputTexts(
               label: "Senha",
               hint: "Digite sua senha",
               obscure: true,
+              onChanged: print,
             ),
             SizedBox(height: 50),
             Button(
