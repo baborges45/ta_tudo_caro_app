@@ -37,7 +37,7 @@ class InputTexts extends StatelessWidget {
             hintStyle: AppTheme.textStyles.hint,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: AppTheme.colors.border),
+              borderSide: BorderSide(color: AppTheme.colors.background),
             ),
           ),
         ),
