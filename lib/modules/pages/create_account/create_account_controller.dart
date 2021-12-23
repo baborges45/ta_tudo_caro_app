@@ -1,19 +1,23 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/widgets.dart';
 
-class LoginController {
+class CreateAccountController {
   final formKey = GlobalKey<FormState>();
   String _email = "";
   String _password = "";
+  String _name = "";
 
-  ///essa function recebe as String [email] e [senha]
+  ///essa function recebe as String [email], [senha] e [name]
   ///e capturas os valores digitados na LoginPage
-  void onChange({String? email, String? password}) {
+  void onChange({String? email, String? password, String? name}) {
     _email = email ?? _email;
     _password = password ?? _password;
-    print("email: $_email | password: $_password");
+    _name = name ?? _name;
+    print("email: $_email | password: $_password | name: $_name");
   }
 
-  ///Faz a validação dos campos [email], [senha] salvando se foi digitado
+  ///Faz a validação dos campos [email], [senha] e [name] salvando se foi digitado
   ///com de acordo da validação de cada campo
   bool validate() {
     final form = formKey.currentState;
@@ -24,7 +28,7 @@ class LoginController {
     return false;
   }
 
-  void loginValidate() {
+  void createAccountValidate() {
     if (validate()) {
       print('Pode chamar o backend!');
     }
