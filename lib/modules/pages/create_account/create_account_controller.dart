@@ -28,6 +28,8 @@ class CreateAccountController {
     return false;
   }
 
+  ///Faz a validação dos campos [email], [senha] e [name] salvando o que foi digitado
+  ///se tiver vazio cria um alerta de acordo da validação de cada campo chamando a function validate()
   void createAccountValidate() {
     if (validate()) {
       print('Pode chamar o backend!');
