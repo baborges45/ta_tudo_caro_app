@@ -4,6 +4,8 @@ typedef Success<T> = Function(T data);
 typedef Error = Function(String message, Exception? e);
 typedef OrElse = Function();
 
+///creating the class that will treat the states
+///of [empty], [loading], [success] and [error]
 abstract class AppState {
   dynamic when({
     Empty? empty,

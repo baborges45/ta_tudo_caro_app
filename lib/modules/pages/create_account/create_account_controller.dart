@@ -1,8 +1,10 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/widgets.dart';
+import 'package:ta_tudo_caro_app/shared/utils/app_state.dart';
 
-class CreateAccountController {
+class CreateAccountController extends ChangeNotifier {
+  AppState state = AppState.empty();
   final formKey = GlobalKey<FormState>();
   String _email = "";
   String _password = "";
@@ -14,7 +16,6 @@ class CreateAccountController {
     _email = email ?? _email;
     _password = password ?? _password;
     _name = name ?? _name;
-    print("email: $_email | password: $_password | name: $_name");
   }
 
   ///Faz a validação dos campos [email], [senha] e [name] salvando se foi digitado
@@ -28,11 +29,22 @@ class CreateAccountController {
     return false;
   }
 
+  void update(AppState state) {
+    this.state = state;
+    notifyListeners();
+  }
+
   ///Faz a validação dos campos [email], [senha] e [name] salvando o que foi digitado
   ///se tiver vazio cria um alerta de acordo da validação de cada campo chamando a function validate()
-  void createAccountValidate() {
+  Future<void> createAccountValidate() async {
     if (validate()) {
-      print('Pode chamar o backend!');
+      try {
+        update(AppState.loading());
+        await Future.delayed(Duration(seconds: 4));
+        update(AppState.success<String>('Deu certo'));
+      } catch (e) {
+        update(AppState.error('Não foi possível criar conta'));
+      }
     }
   }
 }
