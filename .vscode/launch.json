@@ -7,7 +7,11 @@
         {
             "name": "ta_tudo_caro_app",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": [
+                "--dart-define","SUPABASEURL=https://flwnhexxghpqeysrwark.supabase.co",
+                "--dart-define","SUPABASEKEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MDczNjk5MCwiZXhwIjoxOTU2MzEyOTkwfQ.KPFeN_6av574vOAyV-UsIdlKWC08MhxglqQ5bYNcx18",
+            ]
         },
         {
             "name": "ta_tudo_caro_app (profile mode)",
